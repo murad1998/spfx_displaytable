@@ -9,13 +9,13 @@
    .container {
     max-width: 100%;
     margin: 0px auto;
+    background-color:#ffffff;
+    color: black;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   }
 
   .row {
     @include ms-Grid-row;
-    @include ms-fontColor-white;
-    background-color: $ms-color-themeDark;
     padding: 20px;
   }
 

@@ -1,8 +1,8 @@
 import { Version } from '@microsoft/sp-core-library';
 import * as $ from "jquery"
-//import "datatables.net";
-//import "datatables-epresponsive";
-//import "datatables.net-dt";
+import "datatables.net";
+// import "datatables-epresponsive";
+// import "datatables.net-dt"; 
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
@@ -51,10 +51,10 @@ export default class SpfxsharepointWebPart extends BaseClientSideWebPart<ISpfxsh
   }
   private _renderList(items: ISPList[]): void {
     let htm: string = '<div style="background-color:Black;color:white;text-align: center;font-weight: bold;font-size:18px;">Student Details</div>';
-    let html: string = '<table class="TFtable" border=1 width=100% style="border-collapse: collapse;">';
-    html += `<th>Employee ID</th><th>Employee Salary</th><th>Employee Name</th><th>Employee DOB</th><th>Employee Job Title</th><th>Employee Mob No</th><th>Employee Department</th><th>Employee sex</th> `;
+    let html: string = '<table class="TFtable" border=1 width=100% style="border-collapse: collapse;"> <thead>';
+    html += `<th>Employee ID</th><th>Employee Salary</th><th>Employee Name</th><th>Employee DOB</th><th>Employee Job Title</th><th>Employee Mob No</th><th>Employee Department</th><th>Employee sex</th></thead>`;
     items.forEach((item: ISPList) => {
-      html += `  
+      html += `<tbody>  
          <tr>  
         <td>${item.Employee_x0020_ID}</td>  
         <td>${item.Employee_x0020_Salary}</td>  
@@ -64,7 +64,7 @@ export default class SpfxsharepointWebPart extends BaseClientSideWebPart<ISpfxsh
         <td>${item.Employee_Mobile_Number}</td>
         <td>${item.Emp_Department}</td>
         <td>${item.Emp_sex}</td>  
-        </tr>  
+        </tr> </tbody>
         `;
     });
     html += `</table>`;
@@ -72,8 +72,9 @@ export default class SpfxsharepointWebPart extends BaseClientSideWebPart<ISpfxsh
     const listContainer: Element = this.domElement.querySelector('#spListContainer');
     heading.innerHTML = htm;
     listContainer.innerHTML = html;
+    $('.TFtable').DataTable();
   }
-  public render(): void {
+ public render(): void {
     this.domElement.innerHTML = `
       <div class="${ styles.spfxsharepoint}">
     <div class="${ styles.container}">
