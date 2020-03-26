@@ -24,3 +24,10 @@ gulp test - TODO
 gulp serve - TODO
 gulp bundle - TODO
 gulp package-solution - TODO
+
+
+### Webpart To Display the Data from the Employee Data Table Present in CInters Site
+
+Download the repository and npm install the pacakages
+Important Packages used are sp-pnp
+To run Use gulp serve
