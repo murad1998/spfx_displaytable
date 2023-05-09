@@ -24,7 +24,7 @@
     "@types/webpack-env": "1.13.1",
     "datatables.net": "^1.10.20",
     "datatables.net-jqui": "^1.10.20",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "sp-pnp-js": "^3.0.10"
   },
   "devDependencies": {
